@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 화면 전체를 세로(column)로 배치해 헤더-본문-푸터 3단 구조로 만듦 */
+body {
+  background: #080c0a;
+  color: #ededed;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 상단 네비게이션 바 (헤더) */
+header {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between; /* 로고는 왼쪽 끝, 링크는 오른쪽 끝으로 밀어냄 */
+  align-items: center; /* 세로 줄맞춤 중앙 정렬 */
+  border-bottom: 1px solid #1a1a1a;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.15rem;
+  color: #fff;
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  gap: 1.25rem;
+} /* 메뉴 사이 간격 */
+nav a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #fff;
+} /* 마우스 올렸을 때 하얗게 빛남 */
+
+/* 가운데 본문 영역 (남는 세로 공간을 모두 차지해 화면 중앙에 위치) */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  color: #888;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: #111714;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.card:hover {
+  border-color: #555;
+  transform: translateY(-2px);
+}
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card p {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.badge {
+  font-size: 0.75rem;
+  background: #222;
+  color: #aaa;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+.badge.live {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* 하단 푸터 */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #555;
+  font-size: 0.8rem;
+}
